@@ -1,3 +1,4 @@
+import { loadPrivateKey } from '../../security/foundry-keystore.js';
 import { ethers } from "ethers";
 import {
   MARKETPLACE_ABI,
@@ -13,7 +14,7 @@ async function testSignBid() {
   );
 
   // Replace with your private key - NEVER use this in production
-  const PRIVATE_KEY = process.env.PRIVATE_KEY!;
+  const PRIVATE_KEY = loadPrivateKey('PRIVATE_KEY')!;
   const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
 
   // Initialize contract

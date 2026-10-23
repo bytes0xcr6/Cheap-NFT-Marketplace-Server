@@ -1,3 +1,5 @@
+> Operational signing now uses encrypted Foundry keystores. Follow [KEYSTORE_MIGRATION.md](KEYSTORE_MIGRATION.md); older raw private key environment instructions below are superseded.
+
 # Cheap-NFT-Marketplace-Server
 
 A lightweight microservice for handling off-chain NFT marketplace operations on Arbitrum Sepolia. Enables gasless listings and bids with signature-based trading, where users only pay gas when executing the final trade.
