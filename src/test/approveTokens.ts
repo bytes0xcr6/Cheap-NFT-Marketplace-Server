@@ -1,3 +1,4 @@
+import { loadPrivateKey } from '../../security/foundry-keystore.js';
 import { ethers } from "ethers";
 import dotenv from "dotenv";
 dotenv.config();
@@ -6,7 +7,7 @@ async function approveTokens() {
   const provider = new ethers.providers.JsonRpcProvider(
     "https://sepolia-rollup.arbitrum.io/rpc"
   );
-  const wallet = new ethers.Wallet(process.env.PRIVATE_KEY!, provider);
+  const wallet = new ethers.Wallet(loadPrivateKey('PRIVATE_KEY')!, provider);
 
   // Approve NFT
   const nftContract = new ethers.Contract(

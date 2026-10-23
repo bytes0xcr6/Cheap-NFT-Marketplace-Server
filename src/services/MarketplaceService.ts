@@ -1,3 +1,4 @@
+import { loadPrivateKey } from '../../security/foundry-keystore.js';
 import { ethers, BigNumber } from "ethers";
 import {
   Listing,
@@ -26,7 +27,7 @@ export class MarketplaceService {
     };
     this.provider = provider;
 
-    const privateKey = process.env.PRIVATE_KEY;
+    const privateKey = loadPrivateKey('PRIVATE_KEY');
     if (!privateKey) {
       throw new Error("PRIVATE_KEY environment variable is required");
     }
